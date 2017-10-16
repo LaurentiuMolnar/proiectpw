@@ -1,0 +1,26 @@
+{
+  "name": "proiectpw",
+  "version": "1.0.0",
+  "description": "Platforma prin care organizatiile pot sa inscrie proiecte, iar oamenii se pot inscrie ca voluntari la proiectele respective.",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "passport": "^0.4.0",
+    "passport-jwt": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaurentiuMolnar/proiectpw.git"
+  },
+  "author": "Laurentiu-Adrian MOLNAR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaurentiuMolnar/proiectpw/issues"
+  },
+  "homepage": "https://github.com/LaurentiuMolnar/proiectpw#readme"
+}
