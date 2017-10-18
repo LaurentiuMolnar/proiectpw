@@ -37,7 +37,7 @@ app.set('view engine', 'html');
 app.get('/', (req, res) => res.render('index.html'));
 
 // Define path for static files
-app.use('/', express.static('app'));
+app.use('/', express.static(path.join(__dirname, 'app', 'assets')));
 
 // Start the app
 app.listen(process.env.PORT, process.env.HOST, () => console.log("Listening on port " + process.env.PORT + ", " + new Date()));
