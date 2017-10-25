@@ -16,9 +16,16 @@ var connection = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
+let flash = {
+  on: false,
+  message: ''
+};
+
 connection.connect((err) => {
   if(err) {
     console.error('Error connecting: ' + err.stack);
+    flash.on = true;
+    flash.message = "Error connecting to the database. Please try again later";
     return;
   }
   console.log('Connected as id ' + connection.threadId);
@@ -34,7 +41,9 @@ app.engine('html', hbs({
 }));
 app.set('view engine', 'html');
 
-app.get('/', (req, res) => res.render('index.html'));
+app.get('/', (req, res) => res.render('index.html', {
+  flash: flash
+}));
 
 // Define path for static files
 app.use('/', express.static(path.join(__dirname, 'app', 'assets')));

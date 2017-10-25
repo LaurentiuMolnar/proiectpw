@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
+
+    {{#if flash.on}}
+      <div class="flashMessage" style="opacity: 1; translate: opacity 300ms ease-in-out">
+        <h4>{{{flash.message}}}</h4>
+      </div>
+      <script type="text/javascript">
+        let flashMessage = document.querySelector('.flashMessage');
+        setTimeout(() => flashMessage.style.opacity = 0, 10*1000);
+        setTimeout(() => flashMessage.parentNode.removeChild(flashMessage), 11*1000);
+      </script>
+    {{/if}}
+
     {{{ body }}}
   </body>
 </html>
