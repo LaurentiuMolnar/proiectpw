@@ -8,7 +8,7 @@ Proiectul constă într-o platformă pentru proiecte de voluntariat. Un ONG îș
 + News Feed pe care apar toate proiectele
 + pagini de profil pentru organizații, respectiv voluntari
 + opțiune de a da follow unei organizații pentru a apărea mai sus în News Feed
-+ __BONUS:__ sistem de chat între voluntari sau voluntar-organizație
++ __BONUS:__ sistem de chat între voluntari sau voluntar-organizație (dacă celelalte vor merge ok)
 
 ### Tehnologii utilizate:
 + Front-end: HTML5, CSS3 & Javascript (în principiu fără framework-uri de fornt-end)
