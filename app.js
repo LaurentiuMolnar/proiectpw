@@ -7,6 +7,14 @@ const app = express();
 const path = require('path');
 const mysql = require('mysql');
 const hbs = require('express-handlebars');
+const bodyParser = require('body-parser');
+
+// Require middleware
+const flashMiddleware = require('./middleware/flash')();
+
+// Require routes
+const index = require('./routes/index');
+const login = require('./routes/login');
 
 // Connect to the database
 var connection = mysql.createConnection({
@@ -15,11 +23,6 @@ var connection = mysql.createConnection({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME
 });
-
-let flash = {
-  on: false,
-  message: ''
-};
 
 connection.connect((err) => {
   if(err) {
@@ -41,9 +44,18 @@ app.engine('html', hbs({
 }));
 app.set('view engine', 'html');
 
-app.get('/', (req, res) => res.render('index.html', {
-  flash: flash
-}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(flashMiddleware);
+// app.use((req, res, next) => {
+//   console.log(req.headers);
+//   next();
+// })
+
+app.use('/', index);
+app.use('/login', login);
+app.all('*', (req, res) => res.render('404.html'));
 
 // Define path for static files
 app.use('/', express.static(path.join(__dirname, 'app', 'assets')));
