@@ -1,4 +1,4 @@
-// This file contains the routes for the index page - /login
+// This file contains the routes for the login page - /login
 
 var router = require('express').Router();
 
@@ -9,6 +9,7 @@ router.route('/')
   }))
   .post((req, res) => {
     console.log(req.body);
+
     res.redirect(req.body.redirectURL);
   })
   ;

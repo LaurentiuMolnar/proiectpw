@@ -4,10 +4,13 @@
   "description": "Platforma prin care organizatiile pot sa inscrie proiecte, iar oamenii se pot inscrie ca voluntari la proiectele respective.",
   "main": "app.js",
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "consolidate": "^0.14.5",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "express-graphql": "^0.6.11",
     "express-handlebars": "^3.0.0",
+    "graphql": "^0.11.7",
     "handlebars": "^4.0.11",
     "mysql": "^2.15.0",
     "passport": "^0.4.0",
