@@ -46,11 +46,14 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          hotReload: true
+        }
       },
       {
-          test: /\.s[a|c]ss$/,
-          loader: 'style!css!sass'
+        test: /\.s[a|c]ss$/,
+        loader: 'style!css!sass'
       }
     ]
   },

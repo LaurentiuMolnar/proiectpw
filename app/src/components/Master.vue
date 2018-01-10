@@ -1,29 +1,29 @@
 <template>
   <div>
-    <p>{{greeting}} World!</p>
+    <p>{{appName}}</p>
 
-    <router-link to="/projects">Projects</router-link>
-    <router-link to="/users">Users</router-link>
+    <nav>
+      <h3>Menu</h3>
+      <!-- <li><router-link to="/">Home</router-link></li> -->
+      <li><router-link to="/projects">Home</router-link></li>
+      <li><router-link to="/login">Login</router-link></li>
+      <li><router-link to="/ngologin">Login as an organization</router-link></li>
+      <li><router-link to="/signup">Signup</router-link></li>
+      <li><router-link to="/ngosignup">Signup as an organization</router-link></li>
+    </nav>
 
     <router-view></router-view>
   </div>
 </template>
 
 <script type="text/javascript">
-  import axios from 'axios';
 
   export default {
     name: 'master',
     data () {
       return {
-        greeting: 'Hello'
+        appName: 'Vue App'
       }
-    },
-    mounted () {
-      axios.get('http://127.0.0.1:3000/users')
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err))
-        ;
     }
   }
 </script>
@@ -32,5 +32,9 @@
   p
     font-size: 2em
     text-align: center
+
+  nav
+    li
+      display: block
 
 </style>

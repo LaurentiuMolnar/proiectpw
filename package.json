@@ -19,12 +19,15 @@
     "passport": "^0.4.0",
     "passport-jwt": "^3.0.0",
     "restify": "^6.3.4",
+    "tiny-cookie": "^2.1.1",
     "vue": "^2.5.9",
+    "vue-cookie": "^1.1.4",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.7",
     "node-sass": "^4.7.2",
